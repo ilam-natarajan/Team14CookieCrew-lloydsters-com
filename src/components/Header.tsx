@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">Feature Feedback Forum</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">Lloydsters, how did you like the new features</h1>
             <p className="text-primary-foreground/80 mt-1">
               Share your ideas, vote on features, and help shape our product
             </p>
