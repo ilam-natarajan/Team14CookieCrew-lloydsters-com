@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { UserRound } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const MOCK_REFERRALS = [
   {
@@ -32,7 +31,7 @@ const ReferralStars = () => {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <UserRound className="h-6 w-6" />
+              <Star className="h-6 w-6 text-yellow-400" />
               Colleague Referral Stars
             </CardTitle>
           </CardHeader>

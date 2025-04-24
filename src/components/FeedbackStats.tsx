@@ -33,7 +33,6 @@ const FeedbackStats = () => {
   
   // Calculate statistics
   const colleagueOfferCount = MOCK_OFFERS.length;
-  const referralStarsCount = feedback.filter(item => item.category === 'referral-stars').length;
 
   return (
     <div className="grid grid-cols-2 gap-4 mb-6">
@@ -54,7 +53,13 @@ const FeedbackStats = () => {
             <CardTitle className="text-sm font-medium text-muted-foreground">Referral Stars</CardTitle>
           </CardHeader>
           <CardContent className="py-2 px-4">
-            <p className="text-2xl font-bold">{referralStarsCount}</p>
+            <div className="flex items-center justify-center">
+              <img
+                src="/placeholder.svg"
+                alt="Referrals"
+                className="w-8 h-8 object-cover"
+              />
+            </div>
           </CardContent>
         </Card>
       </Link>
