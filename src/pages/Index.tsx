@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import FeedbackStats from '@/components/FeedbackStats';
 import { FeedbackProvider } from '@/contexts/FeedbackContext';
 import FeedbackForm from '@/components/FeedbackForm';
+import TopAdvocates from '@/components/TopAdvocates';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { CreditCard } from 'lucide-react';
 
@@ -27,6 +28,9 @@ const Index = () => {
             </AlertDescription>
           </Alert>
           <FeedbackStats />
+          <div className="mt-6">
+            <TopAdvocates />
+          </div>
         </main>
         
         <FeedbackForm 
@@ -39,3 +43,4 @@ const Index = () => {
 };
 
 export default Index;
+
