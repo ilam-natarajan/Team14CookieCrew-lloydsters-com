@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -26,6 +25,8 @@ const MOCK_REFERRALS = [
 ];
 
 const ReferralStars = () => {
+  const sortedReferrals = [...MOCK_REFERRALS].sort((a, b) => b.referralsCount - a.referralsCount);
+
   return (
     <div className="min-h-screen bg-gray-50 pb-6">
       <div className="bg-amber-500 text-white p-4 sticky top-0 z-10 shadow-md">
@@ -42,7 +43,7 @@ const ReferralStars = () => {
       
       <div className="container mx-auto max-w-4xl px-3 pt-4">
         <div className="space-y-3">
-          {MOCK_REFERRALS.map((referral, index) => (
+          {sortedReferrals.map((referral, index) => (
             <Card key={referral.id} className={`shadow-sm ${index === 0 ? 'border-amber-400 border-2' : ''}`}>
               <CardContent className="p-3">
                 <div className="flex items-center justify-between">
