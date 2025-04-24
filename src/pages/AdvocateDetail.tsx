@@ -60,6 +60,15 @@ const AdvocateDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
+      <div className="bg-[#00b368] text-white p-4 sticky top-0 z-10 shadow-md mb-6">
+        <div className="max-w-4xl mx-auto flex items-center gap-2">
+          <Link to="/" className="p-1.5 text-white">
+            <ArrowLeft size={20} />
+          </Link>
+          <h1 className="text-lg font-bold">Advocate Details</h1>
+        </div>
+      </div>
+
       <div className="max-w-4xl mx-auto">
         <Link to="/" className="inline-flex items-center gap-2 text-primary hover:underline mb-6">
           <ArrowLeft className="h-4 w-4" />
