@@ -7,28 +7,16 @@ const FeedbackStats = () => {
   const { feedback } = useFeedback();
   
   // Calculate statistics
-  const statusCounts = {
-    'in-progress': feedback.filter(item => item.status === 'in-progress').length,
-    completed: feedback.filter(item => item.status === 'completed').length,
-  };
+  const colleagueOfferCount = feedback.filter(item => item.category === 'colleague-offers').length;
 
   return (
-    <div className="grid grid-cols-2 gap-4 mb-6">
+    <div className="grid grid-cols-1 gap-4 mb-6">
       <Card>
         <CardHeader className="py-2 px-4">
-          <CardTitle className="text-sm font-medium text-muted-foreground">In Progress</CardTitle>
+          <CardTitle className="text-sm font-medium text-muted-foreground">Colleague Offers</CardTitle>
         </CardHeader>
         <CardContent className="py-2 px-4">
-          <p className="text-2xl font-bold">{statusCounts['in-progress']}</p>
-        </CardContent>
-      </Card>
-      
-      <Card>
-        <CardHeader className="py-2 px-4">
-          <CardTitle className="text-sm font-medium text-muted-foreground">Completed</CardTitle>
-        </CardHeader>
-        <CardContent className="py-2 px-4">
-          <p className="text-2xl font-bold">{statusCounts.completed}</p>
+          <p className="text-2xl font-bold">{colleagueOfferCount}</p>
         </CardContent>
       </Card>
     </div>
@@ -36,4 +24,3 @@ const FeedbackStats = () => {
 };
 
 export default FeedbackStats;
-

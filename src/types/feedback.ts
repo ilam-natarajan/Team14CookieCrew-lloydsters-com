@@ -1,7 +1,6 @@
-
 export type FeedbackStatus = 'new' | 'planned' | 'in-progress' | 'completed' | 'declined';
 
-export type FeedbackCategory = 'ui' | 'feature' | 'bug' | 'improvement' | 'other';
+export type FeedbackCategory = 'ui' | 'feature' | 'bug' | 'improvement' | 'other' | 'colleague-offers';
 
 export interface FeedbackComment {
   id: string;

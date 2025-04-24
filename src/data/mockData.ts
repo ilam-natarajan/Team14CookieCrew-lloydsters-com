@@ -1,4 +1,3 @@
-
 import { Feedback, FeedbackCategory, FeedbackStatus } from '@/types/feedback';
 
 // Generate a unique ID
@@ -151,6 +150,7 @@ export const categories = [
   { id: 'bug', label: 'Bug', color: 'bg-red-500' },
   { id: 'improvement', label: 'Improvement', color: 'bg-green-500' },
   { id: 'other', label: 'Other', color: 'bg-orange-500' },
+  { id: 'colleague-offers', label: 'Colleague Offers', color: 'bg-[#8B5CF6]' }, // Using soft purple from the color palette
 ];
 
 // Statuses with their display properties
