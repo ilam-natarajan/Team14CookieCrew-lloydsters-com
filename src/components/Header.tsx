@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
             />
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
-                Lloydsters! Let's build our products together! Share your thoughts <Speaker size={24} />
+                Lloydsters! Let's build together <Speaker size={24} />
               </h1>
               <p className="text-white/80 mt-1">
                 Share your ideas, vote on features, and help shape our product
