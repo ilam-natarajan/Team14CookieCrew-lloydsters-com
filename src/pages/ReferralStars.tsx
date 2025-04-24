@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Star } from 'lucide-react';
+import { ArrowLeft, Star, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
 
 const MOCK_REFERRALS = [
   {
@@ -25,7 +36,17 @@ const MOCK_REFERRALS = [
 ];
 
 const ReferralStars = () => {
+  const { toast } = useToast();
+  const [contact, setContact] = useState('');
   const sortedReferrals = [...MOCK_REFERRALS].sort((a, b) => b.referralsCount - a.referralsCount);
+
+  const handleReferral = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Backend Integration Required",
+      description: "Please connect to Supabase to enable email sending functionality.",
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 pb-6">
@@ -59,6 +80,38 @@ const ReferralStars = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" className="gap-2">
+                <Send className="h-4 w-4" />
+                Refer your family and friends
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Send a Referral Invitation</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handleReferral} className="space-y-4 mt-4">
+                <div className="space-y-2">
+                  <Label htmlFor="contact">Email or Phone Number</Label>
+                  <Input
+                    id="contact"
+                    type="text"
+                    placeholder="Enter email or phone number"
+                    value={contact}
+                    onChange={(e) => setContact(e.target.value)}
+                    required
+                  />
+                </div>
+                <Button type="submit" className="w-full">
+                  Send Referral
+                </Button>
+              </form>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </div>
