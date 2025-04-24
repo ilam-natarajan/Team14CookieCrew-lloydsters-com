@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useFeedback } from '@/contexts/FeedbackContext';
 
@@ -12,14 +13,16 @@ const FeedbackStats = () => {
 
   return (
     <div className="grid grid-cols-2 gap-4 mb-6">
-      <Card>
-        <CardHeader className="py-2 px-4">
-          <CardTitle className="text-sm font-medium text-muted-foreground">Colleague Offers</CardTitle>
-        </CardHeader>
-        <CardContent className="py-2 px-4">
-          <p className="text-2xl font-bold">{colleagueOfferCount}</p>
-        </CardContent>
-      </Card>
+      <Link to="/colleague-offers">
+        <Card className="transition-transform hover:scale-105">
+          <CardHeader className="py-2 px-4">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Colleague Offers</CardTitle>
+          </CardHeader>
+          <CardContent className="py-2 px-4">
+            <p className="text-2xl font-bold">{colleagueOfferCount}</p>
+          </CardContent>
+        </Card>
+      </Link>
 
       <Card>
         <CardHeader className="py-2 px-4">
