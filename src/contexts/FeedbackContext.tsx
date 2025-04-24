@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { Feedback, FeedbackCategory, FeedbackComment, FeedbackStatus } from '@/types/feedback';
 import { mockFeedback } from '@/data/mockData';
@@ -19,8 +18,6 @@ interface FeedbackContextType {
   setSelectedStatus: (status: string) => void;
   sortOption: string;
   setSortOption: (option: string) => void;
-  searchTerm: string;
-  setSearchTerm: (term: string) => void;
 }
 
 const FeedbackContext = createContext<FeedbackContextType | undefined>(undefined);
@@ -42,7 +39,6 @@ export const FeedbackProvider = ({ children }: FeedbackProviderProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [sortOption, setSortOption] = useState<string>('most-votes');
-  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const addFeedback = (newFeedback: Omit<Feedback, 'id' | 'votes' | 'comments' | 'createdAt' | 'updatedAt'>) => {
     const feedbackWithId: Feedback = {
@@ -153,8 +149,6 @@ export const FeedbackProvider = ({ children }: FeedbackProviderProps) => {
     setSelectedStatus,
     sortOption,
     setSortOption,
-    searchTerm,
-    setSearchTerm,
   };
 
   return (

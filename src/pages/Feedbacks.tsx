@@ -9,13 +9,12 @@ import FeedbackDetail from '@/components/FeedbackDetail';
 import FeedbackForm from '@/components/FeedbackForm';
 import { FeedbackProvider } from '@/contexts/FeedbackContext';
 import { Feedback } from '@/types/feedback';
-import { useFeedback } from '@/contexts/FeedbackContext';
 
 const Feedbacks = () => {
   const [selectedFeedback, setSelectedFeedback] = useState<Feedback | null>(null);
   const [feedbackDetailOpen, setFeedbackDetailOpen] = useState(false);
   const [feedbackFormOpen, setFeedbackFormOpen] = useState(false);
-  const { searchTerm, setSearchTerm } = useFeedback();
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleFeedbackClick = (feedback: Feedback) => {
     setSelectedFeedback(feedback);
@@ -58,7 +57,7 @@ const Feedbacks = () => {
 
         <main className="container mx-auto max-w-4xl px-3 pt-4">
           <FeedbackFilters />
-          <FeedbackList onFeedbackClick={handleFeedbackClick} />
+          <FeedbackList onFeedbackClick={handleFeedbackClick} searchTerm={searchTerm} />
         </main>
 
         <FeedbackDetail 

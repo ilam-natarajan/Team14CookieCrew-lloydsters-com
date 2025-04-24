@@ -6,15 +6,15 @@ import { Feedback } from '@/types/feedback';
 
 interface FeedbackListProps {
   onFeedbackClick: (feedback: Feedback) => void;
+  searchTerm: string;
 }
 
-const FeedbackList: React.FC<FeedbackListProps> = ({ onFeedbackClick }) => {
+const FeedbackList: React.FC<FeedbackListProps> = ({ onFeedbackClick, searchTerm }) => {
   const { 
     feedback, 
     selectedCategory, 
     selectedStatus, 
-    sortOption, 
-    searchTerm 
+    sortOption,
   } = useFeedback();
 
   const filteredFeedback = useMemo(() => {
