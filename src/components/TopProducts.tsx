@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Package } from 'lucide-react';
 
@@ -26,6 +26,8 @@ const MOCK_PRODUCTS = [
 ];
 
 const TopProducts = () => {
+  const navigate = useNavigate();
+
   return (
     <Card className="shadow-sm">
       <CardHeader className="pb-3">
@@ -44,6 +46,7 @@ const TopProducts = () => {
           {MOCK_PRODUCTS.map((product) => (
             <div 
               key={product.id}
+              onClick={() => navigate(`/product/${product.id}`)}
               className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent cursor-pointer transition-colors"
             >
               <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
