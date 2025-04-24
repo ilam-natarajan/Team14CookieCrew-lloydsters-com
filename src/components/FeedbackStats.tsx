@@ -50,7 +50,7 @@ const FeedbackStats = () => {
             <CardTitle className="text-sm font-medium text-[#9b87f5]">Latest Features</CardTitle>
           </CardHeader>
           <CardContent className="py-2 px-4 flex items-center justify-center">
-            <p className="text-2xl font-bold">Features</p>
+            <p className="text-2xl font-bold">Hurray!</p>
           </CardContent>
         </Card>
       </Link>
