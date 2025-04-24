@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Search } from 'lucide-react';
+import { Search, Mic } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useFeedback } from '@/contexts/FeedbackContext';
@@ -22,7 +23,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
               className="h-16 w-16 md:h-20 md:w-20 object-contain"
             />
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-white">Lloydsters, how did you like the new features</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
+                Lloydsters! Let's build our products together! Share your thoughts <Mic size={24} />
+              </h1>
               <p className="text-white/80 mt-1">
                 Share your ideas, vote on features, and help shape our product
               </p>
@@ -55,3 +58,4 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
 };
 
 export default Header;
+
