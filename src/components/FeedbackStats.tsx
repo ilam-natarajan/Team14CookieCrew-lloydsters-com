@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -32,42 +33,40 @@ const FeedbackStats = () => {
   const colleagueOfferCount = MOCK_OFFERS.length;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-      <Link to="/colleague-offers">
-        <Card className="transition-transform hover:scale-105">
-          <CardHeader className="py-2 px-4">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Colleague Offers</CardTitle>
+    <div className="grid grid-cols-3 gap-3 mb-4">
+      <Link to="/colleague-offers" className="block">
+        <Card className="transition-transform active:scale-95 shadow-sm h-full">
+          <CardHeader className="py-1.5 px-3">
+            <CardTitle className="text-xs font-medium text-muted-foreground">Offers</CardTitle>
           </CardHeader>
-          <CardContent className="py-2 px-4">
-            <p className="text-2xl font-bold">{colleagueOfferCount}</p>
+          <CardContent className="py-1.5 px-3 flex items-center justify-center">
+            <p className="text-xl font-bold">{colleagueOfferCount}</p>
           </CardContent>
         </Card>
       </Link>
 
-      <Link to="/latest-features">
-        <Card className="transition-transform hover:scale-105">
-          <CardHeader className="py-2 px-4">
-            <CardTitle className="text-sm font-medium text-[#9b87f5]">Latest Features</CardTitle>
+      <Link to="/latest-features" className="block">
+        <Card className="transition-transform active:scale-95 shadow-sm h-full">
+          <CardHeader className="py-1.5 px-3">
+            <CardTitle className="text-xs font-medium text-[#9b87f5]">Latest</CardTitle>
           </CardHeader>
-          <CardContent className="py-2 px-4 flex items-center justify-center">
-            <p className="text-2xl font-bold">Hurray!</p>
+          <CardContent className="py-1.5 px-3 flex items-center justify-center">
+            <p className="text-xl font-bold">Features</p>
           </CardContent>
         </Card>
       </Link>
 
-      <Link to="/referral-stars">
-        <Card className="transition-transform hover:scale-105">
-          <CardHeader className="py-2 px-4">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Referral Stars</CardTitle>
+      <Link to="/referral-stars" className="block">
+        <Card className="transition-transform active:scale-95 shadow-sm h-full">
+          <CardHeader className="py-1.5 px-3">
+            <CardTitle className="text-xs font-medium text-muted-foreground">Stars</CardTitle>
           </CardHeader>
-          <CardContent className="py-2 px-4">
-            <div className="flex items-center justify-center">
-              <img
-                src="/lloyds-horse-logo.png"
-                alt="Referrals"
-                className="w-8 h-8 object-cover"
-              />
-            </div>
+          <CardContent className="py-1.5 px-3 flex items-center justify-center">
+            <img
+              src="/lloyds-horse-logo.png"
+              alt="Referrals"
+              className="w-7 h-7 object-cover"
+            />
           </CardContent>
         </Card>
       </Link>

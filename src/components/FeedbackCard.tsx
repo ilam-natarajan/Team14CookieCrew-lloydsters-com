@@ -29,59 +29,55 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback, onClick }) => {
 
   return (
     <Card 
-      className="cursor-pointer hover:shadow-md transition-shadow duration-200"
+      className="cursor-pointer hover:shadow-md transition-shadow active:bg-gray-50"
       onClick={onClick}
     >
-      <CardHeader className="pb-2">
-        <div className="flex justify-between items-start">
+      <CardHeader className="pb-2 p-3">
+        <div className="flex justify-between items-start gap-2">
           <div>
-            <h3 className="font-semibold text-lg">{feedback.title}</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="font-semibold text-base">{feedback.title}</h3>
+            <p className="text-xs text-muted-foreground">
               By {feedback.author} · {formatDistance(new Date(feedback.createdAt), new Date(), { addSuffix: true })}
             </p>
           </div>
           
-          <div className="flex gap-2 flex-shrink-0">
+          <div className="flex gap-1 flex-shrink-0">
             <FeedbackCategoryBadge category={feedback.category} />
             <FeedbackStatusBadge status={feedback.status} />
           </div>
         </div>
       </CardHeader>
       
-      <CardContent>
-        <p className="text-sm line-clamp-3">{feedback.description}</p>
+      <CardContent className="p-3 pt-0">
+        <p className="text-sm line-clamp-2">{feedback.description}</p>
       </CardContent>
       
-      <CardFooter className="pt-2 flex items-center justify-between text-sm">
-        <div className="flex items-center gap-6">
+      <CardFooter className="pt-0 p-3 flex items-center justify-between text-xs border-t">
+        <div className="flex items-center gap-4">
           <div className="flex items-center gap-1">
             <Button 
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-full hover:bg-primary/10 hover:text-primary"
+              className="h-6 w-6 rounded-full"
               onClick={handleUpvote}
             >
-              <ThumbsUp size={16} />
+              <ThumbsUp size={14} />
             </Button>
             <span className="font-medium">{feedback.votes}</span>
             <Button 
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-full hover:bg-destructive/10 hover:text-destructive"
+              className="h-6 w-6 rounded-full"
               onClick={handleDownvote}
             >
-              <ThumbsDown size={16} />
+              <ThumbsDown size={14} />
             </Button>
           </div>
           
           <div className="flex items-center gap-1">
-            <MessageSquare size={16} className="text-muted-foreground" />
+            <MessageSquare size={14} className="text-muted-foreground" />
             <span>{feedback.comments.length}</span>
           </div>
-        </div>
-        
-        <div className="text-muted-foreground">
-          Updated {formatDistance(new Date(feedback.updatedAt), new Date(), { addSuffix: true })}
         </div>
       </CardFooter>
     </Card>

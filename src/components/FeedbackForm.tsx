@@ -56,47 +56,49 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onOpenChange }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[550px]">
+      <DialogContent className="sm:max-w-[500px] p-4">
         <DialogHeader>
-          <DialogTitle className="text-xl">Submit New Feedback</DialogTitle>
+          <DialogTitle className="text-base">Submit New Feedback</DialogTitle>
         </DialogHeader>
         
-        <form onSubmit={handleSubmit} className="space-y-6 py-4">
-          <div className="space-y-2">
-            <Label htmlFor="title">Title</Label>
+        <form onSubmit={handleSubmit} className="space-y-4 py-2">
+          <div className="space-y-1.5">
+            <Label htmlFor="title" className="text-sm">Title</Label>
             <Input
               id="title"
               placeholder="Brief summary of your feedback"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
+              className="h-9 text-sm"
             />
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="description">Description</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="description" className="text-sm">Description</Label>
             <Textarea
               id="description"
               placeholder="Provide details about your feedback or suggestion"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              rows={4}
+              rows={3}
               required
+              className="text-sm"
             />
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="category">Category</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="category" className="text-sm">Category</Label>
             <Select 
               value={category} 
               onValueChange={(value) => setCategory(value as FeedbackCategory)}
             >
-              <SelectTrigger id="category">
+              <SelectTrigger id="category" className="h-9 text-sm">
                 <SelectValue placeholder="Select a category" />
               </SelectTrigger>
               <SelectContent>
                 {categories.filter(cat => cat.id !== 'all').map((cat) => (
-                  <SelectItem key={cat.id} value={cat.id}>
+                  <SelectItem key={cat.id} value={cat.id} className="text-sm">
                     {cat.label}
                   </SelectItem>
                 ))}
@@ -104,11 +106,13 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onOpenChange }) => {
             </Select>
           </div>
           
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
-              Cancel
-            </Button>
-            <Button type="submit">Submit Feedback</Button>
+          <DialogFooter className="pt-2">
+            <div className="flex w-full gap-2">
+              <Button type="button" variant="outline" onClick={() => onOpenChange(false)} size="sm" className="flex-1">
+                Cancel
+              </Button>
+              <Button type="submit" size="sm" className="flex-1">Submit</Button>
+            </div>
           </DialogFooter>
         </form>
       </DialogContent>

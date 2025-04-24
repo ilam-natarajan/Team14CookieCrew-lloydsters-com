@@ -21,10 +21,10 @@ const Index = () => {
 
   return (
     <FeedbackProvider>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header onOpenSubmitDialog={() => setFeedbackFormOpen(true)} />
         
-        <main className="container mx-auto px-4 py-8">
+        <main className="flex-1 px-3 py-4 md:px-6 md:py-6 max-w-4xl mx-auto w-full">
           <FeedbackStats />
           <FeedbackFilters />
           <FeedbackList onFeedbackClick={handleFeedbackClick} />

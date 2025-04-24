@@ -1,8 +1,9 @@
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  text-align: left;
 }
 
 .logo {
@@ -18,25 +19,49 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Mobile-specific styles */
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Mobile native-feeling tap/active states */
+button, a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card {
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+/* Quick animations for mobile feel */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
 }
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 250ms, transform 250ms;
+}
+.page-transition-exit {
+  opacity: 1;
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 250ms, transform 250ms;
+}
+
+/* Mobile pull-to-refresh effect */
+.pull-to-refresh {
+  transform-origin: top;
+  transition: transform 300ms;
+}
+
+/* Mobile momentum scrolling */
+.momentum-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+

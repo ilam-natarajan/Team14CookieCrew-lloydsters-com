@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Star } from 'lucide-react';
+import { ArrowLeft, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const MOCK_REFERRALS = [
   {
@@ -26,36 +27,38 @@ const MOCK_REFERRALS = [
 
 const ReferralStars = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Star className="h-6 w-6 text-yellow-400" />
-              Colleague Referral Stars
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Colleague Name</TableHead>
-                  <TableHead>Department</TableHead>
-                  <TableHead>Number of Referrals</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {MOCK_REFERRALS.map((referral) => (
-                  <TableRow key={referral.id}>
-                    <TableCell className="font-medium">{referral.name}</TableCell>
-                    <TableCell>{referral.department}</TableCell>
-                    <TableCell>{referral.referralsCount}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
+    <div className="min-h-screen bg-gray-50 pb-6">
+      <div className="bg-amber-500 text-white p-4 sticky top-0 z-10 shadow-md">
+        <div className="container mx-auto max-w-4xl flex items-center gap-2">
+          <Link to="/" className="p-1.5">
+            <ArrowLeft size={20} />
+          </Link>
+          <h1 className="text-lg font-bold flex items-center gap-2">
+            Referral Stars
+            <Star className="h-5 w-5 text-yellow-300" fill="currentColor" />
+          </h1>
+        </div>
+      </div>
+      
+      <div className="container mx-auto max-w-4xl px-3 pt-4">
+        <div className="space-y-3">
+          {MOCK_REFERRALS.map((referral, index) => (
+            <Card key={referral.id} className={`shadow-sm ${index === 0 ? 'border-amber-400 border-2' : ''}`}>
+              <CardContent className="p-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-semibold">{referral.name}</h3>
+                    <p className="text-xs text-gray-500">{referral.department}</p>
+                  </div>
+                  <div className="flex items-center gap-1 bg-amber-50 px-2 py-1 rounded-full">
+                    <Star size={16} className="text-amber-500" fill="currentColor" />
+                    <span className="font-semibold">{referral.referralsCount}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );
