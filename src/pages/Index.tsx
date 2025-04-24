@@ -1,13 +1,47 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import Header from '@/components/Header';
+import FeedbackFilters from '@/components/FeedbackFilters';
+import FeedbackList from '@/components/FeedbackList';
+import FeedbackDetail from '@/components/FeedbackDetail';
+import FeedbackForm from '@/components/FeedbackForm';
+import FeedbackStats from '@/components/FeedbackStats';
+import { FeedbackProvider } from '@/contexts/FeedbackContext';
+import { Feedback } from '@/types/feedback';
 
 const Index = () => {
+  const [selectedFeedback, setSelectedFeedback] = useState<Feedback | null>(null);
+  const [feedbackDetailOpen, setFeedbackDetailOpen] = useState(false);
+  const [feedbackFormOpen, setFeedbackFormOpen] = useState(false);
+
+  const handleFeedbackClick = (feedback: Feedback) => {
+    setSelectedFeedback(feedback);
+    setFeedbackDetailOpen(true);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <FeedbackProvider>
+      <div className="min-h-screen bg-gray-50">
+        <Header onOpenSubmitDialog={() => setFeedbackFormOpen(true)} />
+        
+        <main className="container mx-auto px-4 py-8">
+          <FeedbackStats />
+          <FeedbackFilters />
+          <FeedbackList onFeedbackClick={handleFeedbackClick} />
+        </main>
+        
+        <FeedbackDetail 
+          feedback={selectedFeedback} 
+          open={feedbackDetailOpen} 
+          onOpenChange={setFeedbackDetailOpen} 
+        />
+        
+        <FeedbackForm 
+          open={feedbackFormOpen} 
+          onOpenChange={setFeedbackFormOpen} 
+        />
       </div>
-    </div>
+    </FeedbackProvider>
   );
 };
 
