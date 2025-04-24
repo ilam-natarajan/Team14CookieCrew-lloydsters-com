@@ -55,7 +55,7 @@ const FeedbackStats = () => {
           <CardContent className="py-2 px-4">
             <div className="flex items-center justify-center">
               <img
-                src="/public/lloyds-horse-logo.png"
+                src="/lloyds-horse-logo.png"
                 alt="Referrals"
                 className="w-8 h-8 object-cover"
               />
