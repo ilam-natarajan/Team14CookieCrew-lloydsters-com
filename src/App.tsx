@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ColleagueOffers from "./pages/ColleagueOffers";
 import ReferralStars from "./pages/ReferralStars";
+import LatestFeatures from "./pages/LatestFeatures";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/colleague-offers" element={<ColleagueOffers />} />
           <Route path="/referral-stars" element={<ReferralStars />} />
+          <Route path="/latest-features" element={<LatestFeatures />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

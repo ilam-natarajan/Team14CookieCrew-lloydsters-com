@@ -30,12 +30,10 @@ const MOCK_OFFERS = [
 
 const FeedbackStats = () => {
   const { feedback } = useFeedback();
-  
-  // Calculate statistics
   const colleagueOfferCount = MOCK_OFFERS.length;
 
   return (
-    <div className="grid grid-cols-2 gap-4 mb-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
       <Link to="/colleague-offers">
         <Card className="transition-transform hover:scale-105">
           <CardHeader className="py-2 px-4">
@@ -43,6 +41,24 @@ const FeedbackStats = () => {
           </CardHeader>
           <CardContent className="py-2 px-4">
             <p className="text-2xl font-bold">{colleagueOfferCount}</p>
+          </CardContent>
+        </Card>
+      </Link>
+
+      <Link to="/latest-features">
+        <Card className="transition-transform hover:scale-105">
+          <CardHeader className="py-2 px-4">
+            <CardTitle className="text-sm font-medium text-[#9b87f5]">Latest Features</CardTitle>
+          </CardHeader>
+          <CardContent className="py-2 px-4">
+            <div className="flex items-center justify-center">
+              <img
+                src="/lloyds-horse-logo.png"
+                alt="Latest Features"
+                className="w-8 h-8 object-cover"
+                style={{ filter: 'hue-rotate(40deg)' }}
+              />
+            </div>
           </CardContent>
         </Card>
       </Link>
