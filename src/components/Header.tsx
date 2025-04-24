@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -15,11 +16,18 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
     <header className="bg-[#00b368] py-6 px-4 md:px-8 text-white">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-white">Lloydsters, how did you like the new features</h1>
-            <p className="text-white/80 mt-1">
-              Share your ideas, vote on features, and help shape our product
-            </p>
+          <div className="flex items-center gap-4">
+            <img 
+              src="/lloyds-horse-logo.png" 
+              alt="Lloyds Bank Logo" 
+              className="h-10 w-10 object-contain"
+            />
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold text-white">Lloydsters, how did you like the new features</h1>
+              <p className="text-white/80 mt-1">
+                Share your ideas, vote on features, and help shape our product
+              </p>
+            </div>
           </div>
           
           <Button 
@@ -48,3 +56,4 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
 };
 
 export default Header;
+
