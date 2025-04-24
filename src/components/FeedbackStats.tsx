@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -51,14 +50,6 @@ const FeedbackStats = () => {
             <CardTitle className="text-sm font-medium text-[#9b87f5]">Latest Features</CardTitle>
           </CardHeader>
           <CardContent className="py-2 px-4">
-            <div className="flex items-center justify-center">
-              <img
-                src="/lloyds-horse-logo.png"
-                alt="Latest Features"
-                className="w-8 h-8 object-cover"
-                style={{ filter: 'hue-rotate(40deg)' }}
-              />
-            </div>
           </CardContent>
         </Card>
       </Link>
