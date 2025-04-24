@@ -4,11 +4,35 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useFeedback } from '@/contexts/FeedbackContext';
 
+const MOCK_OFFERS = [
+  {
+    id: 1,
+    productName: "Staff Mortgage",
+    rate: "4.5%",
+    description: "Special mortgage rates for Lloyds Bank colleagues",
+    validUntil: "2025-12-31"
+  },
+  {
+    id: 2,
+    productName: "Staff Savings Account",
+    rate: "5.0%",
+    description: "Enhanced savings rate for bank employees",
+    validUntil: "2025-12-31"
+  },
+  {
+    id: 3,
+    productName: "Personal Loan",
+    rate: "6.5%",
+    description: "Discounted personal loan rates for staff",
+    validUntil: "2025-12-31"
+  }
+];
+
 const FeedbackStats = () => {
   const { feedback } = useFeedback();
   
   // Calculate statistics
-  const colleagueOfferCount = feedback.filter(item => item.category === 'colleague-offers').length;
+  const colleagueOfferCount = MOCK_OFFERS.length;
   const referralStarsCount = feedback.filter(item => item.category === 'referral-stars').length;
 
   return (
