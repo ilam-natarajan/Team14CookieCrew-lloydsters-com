@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -50,8 +49,8 @@ const FeedbackStats = () => {
           <CardHeader className="py-2 px-4">
             <CardTitle className="text-sm font-medium text-[#9b87f5]">Latest Features</CardTitle>
           </CardHeader>
-          <CardContent className="py-2 px-4 flex items-center justify-center min-h-[88px]">
-            <span className="text-sm text-muted-foreground">View Latest Features</span>
+          <CardContent className="py-2 px-4 flex items-center justify-center">
+            <p className="text-2xl font-bold">Features</p>
           </CardContent>
         </Card>
       </Link>
