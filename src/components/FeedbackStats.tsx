@@ -48,14 +48,16 @@ const FeedbackStats = () => {
         </Card>
       </Link>
 
-      <Card>
-        <CardHeader className="py-2 px-4">
-          <CardTitle className="text-sm font-medium text-muted-foreground">Referral Stars</CardTitle>
-        </CardHeader>
-        <CardContent className="py-2 px-4">
-          <p className="text-2xl font-bold">{referralStarsCount}</p>
-        </CardContent>
-      </Card>
+      <Link to="/referral-stars">
+        <Card className="transition-transform hover:scale-105">
+          <CardHeader className="py-2 px-4">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Referral Stars</CardTitle>
+          </CardHeader>
+          <CardContent className="py-2 px-4">
+            <p className="text-2xl font-bold">{referralStarsCount}</p>
+          </CardContent>
+        </Card>
+      </Link>
     </div>
   );
 };
