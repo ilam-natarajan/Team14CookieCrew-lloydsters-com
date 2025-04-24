@@ -1,24 +1,24 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 const MOCK_REFERRALS = [
   {
-    id: 1,
+    id: 'jamal-washington',
     name: "Jamal Washington",
     department: "Retail Banking",
     referralsCount: 5
   },
   {
-    id: 2,
+    id: 'mei-chen',
     name: "Mei Chen",
     department: "Mortgages",
     referralsCount: 8
   },
   {
-    id: 3,
+    id: 'elena-rodriguez',
     name: "Elena Rodriguez",
     department: "Business Banking",
     referralsCount: 3
@@ -26,9 +26,14 @@ const MOCK_REFERRALS = [
 ];
 
 const TopAdvocates = () => {
+  const navigate = useNavigate();
   const topReferrals = [...MOCK_REFERRALS]
     .sort((a, b) => b.referralsCount - a.referralsCount)
     .slice(0, 3);
+
+  const handleAdvocateClick = (id: string) => {
+    navigate(`/advocate/${id}`);
+  };
 
   return (
     <Card className="shadow-sm">
@@ -46,7 +51,11 @@ const TopAdvocates = () => {
       <CardContent>
         <div className="space-y-3">
           {topReferrals.map((referral, index) => (
-            <div key={referral.id} className="flex items-center gap-3">
+            <div 
+              key={referral.id} 
+              className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent cursor-pointer transition-colors"
+              onClick={() => handleAdvocateClick(referral.id)}
+            >
               <Avatar className="h-8 w-8">
                 <AvatarFallback className={index === 0 ? "bg-amber-100 text-amber-600" : ""}>
                   {referral.name.split(' ').map(n => n[0]).join('')}
@@ -68,4 +77,3 @@ const TopAdvocates = () => {
 };
 
 export default TopAdvocates;
-

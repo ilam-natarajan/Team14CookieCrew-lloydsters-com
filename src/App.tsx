@@ -9,6 +9,7 @@ import ReferralStars from "./pages/ReferralStars";
 import LatestFeatures from "./pages/LatestFeatures";
 import NotFound from "./pages/NotFound";
 import Feedbacks from "./pages/Feedbacks";
+import AdvocateDetail from "./pages/AdvocateDetail";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/advocate/:id" element={<AdvocateDetail />} />
           <Route path="/colleague-offers" element={<ColleagueOffers />} />
           <Route path="/referral-stars" element={<ReferralStars />} />
           <Route path="/latest-features" element={<LatestFeatures />} />
