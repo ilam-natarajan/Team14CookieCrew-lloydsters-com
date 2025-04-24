@@ -7,19 +7,19 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 const MOCK_REFERRALS = [
   {
     id: 1,
-    name: "John Smith",
+    name: "Jamal Washington",
     department: "Retail Banking",
     referralsCount: 5
   },
   {
     id: 2,
-    name: "Sarah Johnson",
+    name: "Mei Chen",
     department: "Mortgages",
     referralsCount: 8
   },
   {
     id: 3,
-    name: "Mike Williams",
+    name: "Elena Rodriguez",
     department: "Business Banking",
     referralsCount: 3
   }
