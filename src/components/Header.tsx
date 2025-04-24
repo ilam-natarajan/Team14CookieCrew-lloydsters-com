@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Search, Loudspeaker } from 'lucide-react';
+import { Search, Speaker } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useFeedback } from '@/contexts/FeedbackContext';
@@ -23,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
             />
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
-                Lloydsters! Let's build our products together! Share your thoughts <Loudspeaker size={24} />
+                Lloydsters! Let's build our products together! Share your thoughts <Speaker size={24} />
               </h1>
               <p className="text-white/80 mt-1">
                 Share your ideas, vote on features, and help shape our product
