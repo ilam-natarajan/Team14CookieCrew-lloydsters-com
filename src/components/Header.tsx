@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -13,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
   const { searchTerm, setSearchTerm } = useFeedback();
 
   return (
-    <header className="bg-[#006844] py-6 px-4 md:px-8 text-white">
+    <header className="bg-[#00cc77] py-6 px-4 md:px-8 text-white">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
