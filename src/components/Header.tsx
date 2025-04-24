@@ -13,12 +13,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
   const { searchTerm, setSearchTerm } = useFeedback();
 
   return (
-    <header className="bg-[#F2FCE2] py-6 px-4 md:px-8 text-black">
+    <header className="bg-[#006844] py-6 px-4 md:px-8 text-white">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">Lloydsters, how did you like the new features</h1>
-            <p className="text-gray-700 mt-1">
+            <h1 className="text-2xl md:text-3xl font-bold text-white">Lloydsters, how did you like the new features</h1>
+            <p className="text-white/80 mt-1">
               Share your ideas, vote on features, and help shape our product
             </p>
           </div>
@@ -34,13 +34,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
         </div>
 
         <div className="mt-6 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70" size={18} />
           <Input
             type="search"
             placeholder="Search feedback..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 bg-white border border-gray-300 text-black placeholder:text-gray-500 focus-visible:ring-green-500"
+            className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus-visible:ring-white/30"
           />
         </div>
       </div>
