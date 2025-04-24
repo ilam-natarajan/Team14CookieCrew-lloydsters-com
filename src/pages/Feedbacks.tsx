@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowLeft, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -24,7 +23,7 @@ const Feedbacks = () => {
   return (
     <FeedbackProvider>
       <div className="min-h-screen bg-gray-50 pb-6">
-        <div className="bg-[#9b87f5] text-white p-4 sticky top-0 z-10 shadow-md">
+        <div className="bg-[#00b368] text-white p-4 sticky top-0 z-10 shadow-md">
           <div className="container mx-auto max-w-4xl">
             <div className="flex items-center gap-2">
               <Link to="/" className="p-1.5">
