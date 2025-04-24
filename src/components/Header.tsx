@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenSubmitDialog }) => {
             variant="secondary"
             className="h-9 whitespace-nowrap"
           >
-            Submit
+            Feedback
           </Button>
         </div>
       </div>
